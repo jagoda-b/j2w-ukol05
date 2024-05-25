@@ -26,3 +26,18 @@ main {
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
 }
+.registration {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.name {
+    display: block;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
