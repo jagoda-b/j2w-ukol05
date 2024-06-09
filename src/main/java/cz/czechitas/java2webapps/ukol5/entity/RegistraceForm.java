@@ -4,8 +4,10 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class RegistraceForm {
     @NotBlank
@@ -13,6 +15,7 @@ public class RegistraceForm {
     @NotBlank
     private String lastName;
     @NotNull
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate birthDate;
     @NotEmpty
     private String gender;
@@ -76,5 +79,11 @@ public class RegistraceForm {
 
     public void setParentPhone(String parentPhone) {
         this.parentPhone = parentPhone;
+    }
+
+    public int getAge() {
+        Period period = birthDate.until(LocalDate.now());
+        return period.getYears();
+
     }
 }

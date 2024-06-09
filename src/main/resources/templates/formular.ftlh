@@ -22,9 +22,8 @@
         [@spring.formInput path="form.lastName"/]
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
-       <label for="birthDate">Datum narození</label>
-        <input type="date" name="birthDate" required>
-        [@spring.formHiddenInput path="form.birthDate"/]
+        <label for="birthDate">Datum narození</label>
+        [@spring.formInput fieldType="date" path="form.birthDate"/]
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
         [@spring.bind "form"/]
